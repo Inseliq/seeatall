@@ -410,7 +410,7 @@ body[data-stream-online="true"] {
 }
 
 .list-day {
-  width: fit-content;
+  width: max-content;
   margin: 12px 0;
   padding: 0px 12px 12px 12px;
   border-radius: 10px;
@@ -446,6 +446,7 @@ body[data-stream-online="true"] {
   box-shadow: 0 6px 18px rgba(3, 8, 20, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.02);
   position: relative;
+  width: max-content;
 
   &::after {
     content: attr(data-plus);
