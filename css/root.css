@@ -1,0 +1,28 @@
+:root {
+  --m-bg-1: #05060a;
+  --m-bg-2: #0b1220;
+  --m-accent-1: #7CFFCB;
+  /* мятный */
+  --m-accent-2: #5AA1FF;
+  /* голубой */
+  --m-neon: #9D7CFF;
+  /* фиолетовый неон */
+  --m-muted: #9aa3b2;
+  --m-card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  --m-radius: 14px;
+  --m-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  --m-ui-gap: 14px;
+}
+
+.controller {
+  display: flex;
+  flex-wrap: wrap;
+
+  .month {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+  }
+}

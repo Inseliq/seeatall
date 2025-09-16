@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <link rel="stylesheet" href="./css/root.css">
+  <link rel="stylesheet" href="./css/style/style.css">
+  <link rel="stylesheet" href="./css/style/icon.style.css">
+
+  <link rel="icon" href="images/favicon.ico" />
+
+  <script src="./controller/on.load.js" defer></script>
+  <script src="./js/settings/function.calc.js" defer></script>
+  <script src="./js/app/animation.js" defer></script>
+  <script src="./controller/onclick.href.js" defer></script>
+  <script src="./controller/stream.online.js" defer></script>
+
+  <title>seeatall - Марафон 25000 БОНН</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body data-stream-online="false">
+  <header>
+    <nav>
+      <a href="https://live.vkvideo.ru/ncuxoseeliq" class="vk-paly main-logo">
+        <img src="./assets/img/logo.png" alt="seeatall" width="18px" height="18px">
+        seeatall
+      </a>
+
+      <div class="left-block">
+        <a href="https://www.donationalerts.com/r/ncuxoseeliq" data-hover="Donation Alerts"
+          class="donate">Поддержать</a>
+        <a href="https://boosty.to/ncuxoseeliq">Boosty</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="marathon-card">
+      <div class="marathon-head">
+        <div class="marathon-title">
+          <div class="tank-icon" aria-hidden>
+            <img src="./assets/img/bonns.png" alt="bonns">
+          </div>
+          <div>
+            <h1>Марафон — 25000 БОНН</h1>
+            <div class="marathon-sub">До <strong >1 Ноября</strong>, Ср/д 87<span
+                class="bonn-icon"></span>.</div>
+          </div>
+        </div>
+
+        <div class="marathon-actions">
+          <button class="btn primary" id="donateBtn" onclick="goToUrl('https://www.donationalerts.com/r/ncuxoseeliq')">
+            Поддержать
+          </button>
+          <button class="btn stream" id="streamBtn" onclick="goToUrl('https://live.vkvideo.ru/ncuxoseeliq')" disabled>
+            Смотреть стрим
+          </button>
+        </div>
+      </div>
+
+      <!-- Прогресс -->
+      <div style="position:relative; margin-top:6px;">
+        <div class="marathon-track" id="marathonTrack" aria-hidden="true">
+          <div class="marathon-fill" id="marathonFill" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+            aria-valuenow="0"></div>
+        </div>
+
+        <!-- бейдж, показываем положение индикатора (динамически) -->
+        <div id="fillBadge" class="marathon-fill-badge">
+          <div class="bubble" id="bubbleValue">0</div>
+          <div class="mini">собрано</div>
+        </div>
+
+        <div class="marathon-info">
+          <div class="marathon-numbers">
+            <div class="current" id="currentVal">0</div>
+            <div class="goal">/ <span id="goalVal">25 000</span></div>
+          </div>
+          <div class="marathon-percent" id="percentVal">0%</div>
+        </div>
+
+        <!-- поздравление -->
+        <div class="celebrate" id="celebrate">
+          <div class="banner">Цель достигнута! Спасибо всем! 🎉</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- список дней и сумм -->
+    <section class="controller">
+      <div class="month" data-date="Октябрь" style="display: none !important;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+          <strong style="color:#fff">Итого за Октябрь:</strong>
+          <span style="color:var(--m-muted); font-size:13px" data-month-sum=""></span>
+        </div>
+        <ul class="list-day">
+          <h3 data-day="1.10" data-day-sum="">Набрано: </h3>
+          <li data-plus="0">
+            description1 —
+          </li>
+          <li data-plus="0">
+            description2 —
+          </li>
+        </ul>
+      </div>
+
+      <div class="month" data-date="Сентябрь">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+          <strong style="color:#fff">Итого за Сентябрь:</strong>
+          <span style="color:var(--m-muted); font-size:13px" data-month-sum=""></span>
+        </div>
+        <ul class="list-day">
+          <h3 data-day="16.09" data-day-sum="">Набрано: </h3>
+          <li data-plus="0">
+            Ничего —
+          </li>
+        </ul>
+        <ul class="list-day">
+          <h3 data-day="15.09" data-day-sum="">Набрано: </h3>
+          <li data-plus="5841">
+            Инициализация —
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section>
+      <article class="left">
+        ©seeatall - 2025 г. Все права защищены.
+      </article>
+      <article class="right">
+        <div class="list-btn" role="button" tabindex="0" aria-controls="site-legal">
+          <!-- icon owner -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM4 20a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Владелец сайта
+        </div>
+
+        <!-- Модальное окно -->
+        <ul id="site-legal" class="list-law" aria-hidden="true">
+          <button class="modal-close" aria-label="Закрыть">&times;</button>
+          <li class="legal-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12h16" stroke="currentColor" stroke-width="1.4" />
+            </svg> ©seeatall</li>
+          <li class="legal-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.2" />
+            </svg> ®seeatall</li>
+          <li class="legal-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.2" />
+            </svg> ℗seeatall</li>
+          <li class="legal-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.2" />
+            </svg> CodeSpark™ A: seeatall</li>
+        </ul>
+      </article>
+    </section>
+  </footer>
+  <div id="start-val-label" style="display: none !important; position: fixed; pointer-events: none; visibility: hidden; opacity: 0;"></div>
+</body>
+
+</html>
